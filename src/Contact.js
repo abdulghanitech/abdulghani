@@ -24,16 +24,16 @@ class Contact extends React.Component {
           body: data,
           
         }).then(response => {
-            console.log(response.status);
+            //console.log(response.status);
             if(response.status == 200){
                 document.getElementById("success").innerHTML="<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>Your message has been sent. </strong></div>";
             }else{
                 document.getElementById("success").innerHTML="<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>Sorry, it seems that my mail server is not responding. Please try again later!. </strong></div>";
             }
-           console.log(response);
+           //console.log(response);
           }).catch(err => {
             // Do something for an error here
-            console.log(err);
+            //console.log(err);
             document.getElementById("success").innerHTML="<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>Sorry, it seems that our mail server is not responding. Please try again later!. </strong></div>";
           }).finally(()=>{
               //hide the loader
