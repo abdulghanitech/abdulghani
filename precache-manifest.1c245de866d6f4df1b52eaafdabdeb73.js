@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/abdulghani/static/media/leadsense-screenshot.f0ea0fa6.png"
   },
   {
-    "revision": "8a3404233938104692da",
+    "revision": "afb972031958ef9c1758",
     "url": "/abdulghani/static/css/main.163a06a7.chunk.css"
   },
   {
@@ -20,16 +20,16 @@ self.__precacheManifest = [
     "url": "/abdulghani/static/js/runtime~main.7d4e1650.js"
   },
   {
+    "revision": "f4769f9bdb7466be65088239c12046d1",
+    "url": "/abdulghani/static/media/glyphicons-halflings-regular.f4769f9b.eot"
+  },
+  {
     "revision": "448c34a56d699c29117adc64c43affeb",
     "url": "/abdulghani/static/media/glyphicons-halflings-regular.448c34a5.woff2"
   },
   {
     "revision": "fa2772327f55d8198301fdb8bcfc8158",
     "url": "/abdulghani/static/media/glyphicons-halflings-regular.fa277232.woff"
-  },
-  {
-    "revision": "f4769f9bdb7466be65088239c12046d1",
-    "url": "/abdulghani/static/media/glyphicons-halflings-regular.f4769f9b.eot"
   },
   {
     "revision": "e18bbf611f2a2e43afc071aa2f4e1512",
@@ -92,8 +92,8 @@ self.__precacheManifest = [
     "url": "/abdulghani/static/media/game.107d31e8.png"
   },
   {
-    "revision": "8a3404233938104692da",
-    "url": "/abdulghani/static/js/main.8a340423.chunk.js"
+    "revision": "afb972031958ef9c1758",
+    "url": "/abdulghani/static/js/main.afb97203.chunk.js"
   },
   {
     "revision": "898953c1e62176283f0ae5ef2494065c",
@@ -180,7 +180,7 @@ self.__precacheManifest = [
     "url": "/abdulghani/static/css/1.25bfd49d.chunk.css"
   },
   {
-    "revision": "a8be4b3d3944b3f5b50823129c206fc7",
+    "revision": "f9d6572d484e16c2d177cd83db0ddc3e",
     "url": "/abdulghani/index.html"
   }
 ];
