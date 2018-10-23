@@ -15,11 +15,11 @@ class PortfolioItem extends React.Component {
 
 
     closeModal() {
-        console.log("handling modal");
+        //console.log("handling modal");
         this.setState({
             showModal: false
         }, function () {
-            console.log(this.state.showModal)
+            //console.log(this.state.showModal)
         });
     }
 
@@ -40,11 +40,11 @@ class PortfolioItem extends React.Component {
     }
 
     toggleModal = () => {
-        console.log("clicked");
+        //console.log("clicked");
         this.setState({
             showModal: !this.state.showModal
         }, function () {
-            console.log(this.state.showModal)
+            //console.log(this.state.showModal)
         });
       }
 

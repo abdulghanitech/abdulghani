@@ -16,11 +16,11 @@ class PortfolioModal extends React.Component {
 
     componentWillReceiveProps(nextProps){
         this.setState({showModal:nextProps.show}); 
-        console.log(this.state);
+        //console.log(this.state);
       }
 
     closeModal = () => {
-        console.log("attempted to close");
+        //console.log("attempted to close");
         this.setState({showModal: false});
     }
 
@@ -30,7 +30,7 @@ class PortfolioModal extends React.Component {
         //this.state.showModal = this.props.show;
         var {mainTitle, image, description, technologies, client, url, date, service} = this.props;
         return (
-            <div className={(this.state.showModal) ? "portfolio-modal modal fade in" : "portfolio-modal modal fade hidden"} style={{ display: this.state.showModal ? "block" : "none" }} id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div className={(this.state.showModal) ? "portfolio-modal modal fade in" : "portfolio-modal modal fade hidden"} style={{ display: this.state.showModal ? "block" : "none" }} id="portfolioModal1" tabIndex="-1" role="dialog" aria-hidden="true">
                 <div className="modal-content">
                     <div className="close-modal" data-dismiss="modal" onClick={this.closeModal}>
                         <div className="lr">

@@ -19,7 +19,7 @@ class Contact extends React.Component {
         //target the form
         let contactForm = document.getElementById("contactForm");
         
-        fetch('http://www.techglows.com/mail/contact_me.php', {
+        fetch('https://magicquiz.net/mail/contact_me.php', {
           method: 'POST',
           body: data,
           

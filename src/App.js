@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './css/bootstrap.min.css';
 import './css/freelancer.min.css';
 import './css/style.css';
@@ -16,15 +15,15 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 class App extends Component {
 
-    constructor(){
+   /*  constructor(){
         super();
        
         //this.didElementReachedToItsEnd = this.didElementReachedToItsEnd.bind(this);
-    }
+    } */
 
     
 
-    didElementReachedToItsEnd(o)
+ /*    didElementReachedToItsEnd(o)
     {
         //visible height + pixel scrolled = total height 
         if(o.offsetHeight + o.scrollTop == o.scrollHeight)
@@ -34,7 +33,7 @@ class App extends Component {
             return false;
         }
     
-    }
+    } */
 
     componentDidMount() {
            
@@ -57,7 +56,7 @@ class App extends Component {
 
     handleScroll(event) {
 
-       function didElementReachedToItsEnd(o)
+      /*  function didElementReachedToItsEnd(o)
         {
             //visible height + pixel scrolled = total height 
             if(o.offsetHeight + o.scrollTop == o.scrollHeight)
@@ -67,20 +66,20 @@ class App extends Component {
                 return false;
             }
         
-        }
+        } */
        
         /*  
         this.setState({
           transform: itemTranslate
         }); */
-        console.log("scrolled");
+        //console.log("scrolled");
        let mainNav =  document.getElementById("mainNav");
 
        var portfolio = document.querySelector('#portfolio');
        var header = document.querySelector('#header'); 
 
        var scrollPosition = document.documentElement.scrollTop;
-       console.log(scrollPosition);
+       //console.log(scrollPosition);
     /*    let scrollTop = document.querySelector("body").scrollTop;
        console.log(scrollTop);
        if(scrollTop > 70){
@@ -97,10 +96,10 @@ class App extends Component {
         mainNav.classList.add("affix-top");
         mainNav.classList.remove("affix");
         if(header.offsetTop >= scrollPosition){
-            console.log("in the header section")
+            //console.log("in the header section")
             document.querySelector('a[href*="portfolio"]').parentNode.setAttribute('class', '');
         }
-        console.log("big nav");
+        //console.log("big nav");
              
        }  
        
@@ -129,13 +128,13 @@ class App extends Component {
             */
 
            for (window.i in window.sections) {
-               console.log(window.i)
+               //console.log(window.i)
             if (window.sections[window.i] <= scrollPosition) {
               try{
                 document.querySelector('.active').setAttribute('class', ' ');
               document.querySelector('a[href*=' + window.i + ']').parentNode.setAttribute('class', 'active');
               }catch(err){
-                console.log(err);
+                //console.log(err);
               }
                 
             }
