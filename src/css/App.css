@@ -2,3 +2,26 @@
  /*  display: block !important; */
   overflow: auto !important;
 }
+
+.small-title{
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  color: #333;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption{
+  height: 90%;
+}
+
+.skills{
+  display: inline;
+}
+
+#contactSendLoader{
+  display: none;
+}
+
+.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open>.dropdown-toggle.btn-success.focus, .open>.dropdown-toggle.btn-success:focus, .open>.dropdown-toggle.btn-success:hover{
+  background-color: #128f76 !important;
+}
