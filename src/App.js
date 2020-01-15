@@ -15,156 +15,156 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 class App extends Component {
 
-   /*  constructor(){
-        super();
+    /*  constructor(){
+         super();
+        
+         //this.didElementReachedToItsEnd = this.didElementReachedToItsEnd.bind(this);
+     } */
+
+
+
+    /*    didElementReachedToItsEnd(o)
+       {
+           //visible height + pixel scrolled = total height 
+           if(o.offsetHeight + o.scrollTop == o.scrollHeight)
+           {
+               return true;
+           }else{
+               return false;
+           }
        
-        //this.didElementReachedToItsEnd = this.didElementReachedToItsEnd.bind(this);
-    } */
-
-    
-
- /*    didElementReachedToItsEnd(o)
-    {
-        //visible height + pixel scrolled = total height 
-        if(o.offsetHeight + o.scrollTop == o.scrollHeight)
-        {
-            return true;
-        }else{
-            return false;
-        }
-    
-    } */
+       } */
 
     componentDidMount() {
-           
-       window.section = document.querySelectorAll("section");
-       window.sections = {};
-       window.i = 0;
 
-        Array.prototype.forEach.call(window.section, function(e) {
+        window.section = document.querySelectorAll("section");
+        window.sections = {};
+        window.i = 0;
+
+        Array.prototype.forEach.call(window.section, function (e) {
             window.sections[e.id] = e.offsetTop;
-          });  
-        
+        });
+
         window.addEventListener('scroll', this.handleScroll);
         //this.didElementReachedToItsEnd = this.didElementReachedToItsEnd.bind(this); 
-        
-       
+
+
     }
 
-  
+
 
 
     handleScroll(event) {
 
-      /*  function didElementReachedToItsEnd(o)
-        {
-            //visible height + pixel scrolled = total height 
-            if(o.offsetHeight + o.scrollTop == o.scrollHeight)
-            {
-                return true;
-            }else{
-                return false;
-            }
-        
-        } */
-       
+        /*  function didElementReachedToItsEnd(o)
+          {
+              //visible height + pixel scrolled = total height 
+              if(o.offsetHeight + o.scrollTop == o.scrollHeight)
+              {
+                  return true;
+              }else{
+                  return false;
+              }
+          
+          } */
+
         /*  
         this.setState({
           transform: itemTranslate
         }); */
         //console.log("scrolled");
-       let mainNav =  document.getElementById("mainNav");
+        let mainNav = document.getElementById("mainNav");
 
-       var portfolio = document.querySelector('#portfolio');
-       var header = document.querySelector('#header'); 
+        var portfolio = document.querySelector('#portfolio');
+        var header = document.querySelector('#header');
 
-       var scrollPosition = document.documentElement.scrollTop;
-       //console.log(scrollPosition);
-    /*    let scrollTop = document.querySelector("body").scrollTop;
-       console.log(scrollTop);
-       if(scrollTop > 70){
-        mainNav.classList.add("affix");
-       }else if(scrollTop < 70){
-        mainNav.classList.add("affix-top");
-       } */
-       
-       if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
-        mainNav.classList.add("affix");
-        mainNav.classList.remove("affix-top");
-        
-       }else{
-        mainNav.classList.add("affix-top");
-        mainNav.classList.remove("affix");
-        if(header.offsetTop >= scrollPosition){
-            //console.log("in the header section")
-            document.querySelector('a[href*="portfolio"]').parentNode.setAttribute('class', '');
-        }
-        //console.log("big nav");
-             
-       }  
-       
-       //for enabling links animation
-       var portfolio = document.querySelector('#portfolio');
-       var about = document.querySelector('#about');
-       var contact = document.querySelector('#contact');
+        var scrollPosition = document.documentElement.scrollTop;
+        //console.log(scrollPosition);
+        /*    let scrollTop = document.querySelector("body").scrollTop;
+           console.log(scrollTop);
+           if(scrollTop > 70){
+            mainNav.classList.add("affix");
+           }else if(scrollTop < 70){
+            mainNav.classList.add("affix-top");
+           } */
 
-    /*    switch(true){
-           case scroll >= portfolio.offsetTop && scroll < about.offsetTop :
-           console.log("TRIGGER: in porfolio section.");
-           mainNav.querySelectorAll("li")[0].classList.add("active");
-           break;
-           case scroll >= about.offsetTop:
-           console.log("TRIGGER: in about section.");
-           mainNav.querySelectorAll("li")[1].classList.add("active");
-           break;
-           case scroll >= contact.offsetTop:
-           console.log("TRIGGER: in contact section.");
-           mainNav.querySelectorAll("li")[2].classList.add("active");
-           break;
-           default:
-           for(var i=0; i< mainNav.querySelectorAll("li").length; i++){
-             mainNav.querySelectorAll("li")[i].classList.remove("active");
-           }
-            */
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            mainNav.classList.add("affix");
+            mainNav.classList.remove("affix-top");
 
-           for (window.i in window.sections) {
-               //console.log(window.i)
-            if (window.sections[window.i] <= scrollPosition) {
-              try{
-                document.querySelector('.active').setAttribute('class', ' ');
-              document.querySelector('a[href*=' + window.i + ']').parentNode.setAttribute('class', 'active');
-              }catch(err){
-                //console.log(err);
-              }
-                
+        } else {
+            mainNav.classList.add("affix-top");
+            mainNav.classList.remove("affix");
+            if (header.offsetTop >= scrollPosition) {
+                //console.log("in the header section")
+                document.querySelector('a[href*="portfolio"]').parentNode.setAttribute('class', '');
             }
-          }
+            //console.log("big nav");
 
-  /*      if( document.documentElement.scrollTop >= portfolio.offsetTop && didElementReachedToItsEnd(portfolio)){
-            console.log("TRIGGER: in porfolio section.");
-            mainNav.querySelectorAll("li")[0].classList.add("active");
-        }else{
-            mainNav.querySelectorAll("li")[0].classList.remove("active");
         }
 
-        if( document.documentElement.scrollTop >= about.offsetTop && didElementReachedToItsEnd(about)){
-            console.log("TRIGGER: in about section.");
-            mainNav.querySelectorAll("li")[1].classList.add("active");
-        }else{
-            mainNav.querySelectorAll("li")[1].classList.remove("active");
+        //for enabling links animation
+        var portfolio = document.querySelector('#portfolio');
+        var about = document.querySelector('#about');
+        var contact = document.querySelector('#contact');
+
+        /*    switch(true){
+               case scroll >= portfolio.offsetTop && scroll < about.offsetTop :
+               console.log("TRIGGER: in porfolio section.");
+               mainNav.querySelectorAll("li")[0].classList.add("active");
+               break;
+               case scroll >= about.offsetTop:
+               console.log("TRIGGER: in about section.");
+               mainNav.querySelectorAll("li")[1].classList.add("active");
+               break;
+               case scroll >= contact.offsetTop:
+               console.log("TRIGGER: in contact section.");
+               mainNav.querySelectorAll("li")[2].classList.add("active");
+               break;
+               default:
+               for(var i=0; i< mainNav.querySelectorAll("li").length; i++){
+                 mainNav.querySelectorAll("li")[i].classList.remove("active");
+               }
+                */
+
+        for (window.i in window.sections) {
+            //console.log(window.i)
+            if (window.sections[window.i] <= scrollPosition) {
+                try {
+                    document.querySelector('.active').setAttribute('class', ' ');
+                    document.querySelector('a[href*=' + window.i + ']').parentNode.setAttribute('class', 'active');
+                } catch (err) {
+                    //console.log(err);
+                }
+
+            }
         }
 
-        if(document.documentElement.scrollTop >= contact.offsetTop && didElementReachedToItsEnd(contact)){
-            console.log("TRIGGER: in contact section.");
-            mainNav.querySelectorAll("li")[2].classList.add("active");
-        }else{
-            mainNav.querySelectorAll("li")[2].classList.remove("active");
-        } */
-  
+        /*      if( document.documentElement.scrollTop >= portfolio.offsetTop && didElementReachedToItsEnd(portfolio)){
+                  console.log("TRIGGER: in porfolio section.");
+                  mainNav.querySelectorAll("li")[0].classList.add("active");
+              }else{
+                  mainNav.querySelectorAll("li")[0].classList.remove("active");
+              }
+      
+              if( document.documentElement.scrollTop >= about.offsetTop && didElementReachedToItsEnd(about)){
+                  console.log("TRIGGER: in about section.");
+                  mainNav.querySelectorAll("li")[1].classList.add("active");
+              }else{
+                  mainNav.querySelectorAll("li")[1].classList.remove("active");
+              }
+      
+              if(document.documentElement.scrollTop >= contact.offsetTop && didElementReachedToItsEnd(contact)){
+                  console.log("TRIGGER: in contact section.");
+                  mainNav.querySelectorAll("li")[2].classList.add("active");
+              }else{
+                  mainNav.querySelectorAll("li")[2].classList.remove("active");
+              } */
+
     }
 
 
-    scrollToTop(e){
+    scrollToTop(e) {
         e.preventDefault();
         window.scrollTo({
             top: 0,
@@ -182,22 +182,22 @@ class App extends Component {
                 <Navbar inverse collapseOnSelect id="mainNav" className="navbar-fixed-top navbar-custom">
                     <Navbar.Header className="page-scroll">
                         <Navbar.Brand>
-                        <a href="#brand">ABDUL GHANI</a>
+                            <a href="#brand">ABDUL GHANI</a>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav pullRight>
-                        <NavItem eventKey={1} href="#portfolio" className="active">
-                        Portfolio
+                            <NavItem eventKey={1} href="#portfolio" className="active">
+                                Portfolio
                         </NavItem>
-                        <NavItem eventKey={2} href="#about">
-                        About
+                            <NavItem eventKey={2} href="#about">
+                                About
                         </NavItem>
-                        <NavItem eventKey={3} href="#contact">
-                        Contact
+                            <NavItem eventKey={3} href="#contact">
+                                Contact
                         </NavItem>
-                        
+
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -210,16 +210,16 @@ class App extends Component {
                                 <img className="img-responsive" src={require("./img/profile.png")} alt="" />
                                 <div className="intro-text">
                                     <ScrollAnimation animateIn='fadeIn'
-                                    animateOut='fadeOut'>
+                                        animateOut='fadeOut'>
                                         <span className="name">ABDUL GHANI</span>
                                     </ScrollAnimation>
-                                                                
-                                   {/*  <span className="name">ABDUL GHANI</span> */}
 
-                                   <hr className="star-light" />
+                                    {/*  <span className="name">ABDUL GHANI</span> */}
+
+                                    <hr className="star-light" />
 
                                     <ScrollAnimation animateIn='bounceInLeft'
-                                    animateOut='bounceOutRight'>
+                                        animateOut='bounceOutRight'>
                                         <span className="skills">Full Stack Web Developer</span>
                                     </ScrollAnimation>
 
@@ -229,7 +229,7 @@ class App extends Component {
                                     </ScrollAnimation>
 
                                     <ScrollAnimation animateIn='bounceInRight'
-                                    animateOut='bounceOutLeft'>
+                                        animateOut='bounceOutLeft'>
                                         <span className="skills">Tech Geek</span>
                                     </ScrollAnimation>
                                     {/* <span className="skills">Full Stack Web Developer - Blogger - Tech Geek</span> */}
@@ -251,23 +251,23 @@ class App extends Component {
                         </div>
                         <div className="row">
 
-                           
 
-                        {
-                            Portfolios.map((Portfolios, i) => 
-                            <PortfolioItem
-                                image={Portfolios.image}
-                                mainTitle={Portfolios.mainTitle}
-                                description={Portfolios.description}
-                                technologies={Portfolios.technologies}
-                                client={Portfolios.client}
-                                url={Portfolios.url}
-                                date={Portfolios.date}
-                                service={Portfolios.service}
-                                key={i}
-                            />
-                            )
-                        }
+
+                            {
+                                Portfolios.map((Portfolios, i) =>
+                                    <PortfolioItem
+                                        image={Portfolios.image}
+                                        mainTitle={Portfolios.mainTitle}
+                                        description={Portfolios.description}
+                                        technologies={Portfolios.technologies}
+                                        client={Portfolios.client}
+                                        url={Portfolios.url}
+                                        date={Portfolios.date}
+                                        service={Portfolios.service}
+                                        key={i}
+                                    />
+                                )
+                            }
 
 
                         </div>
@@ -278,9 +278,9 @@ class App extends Component {
 
                 {/*     <!-- About Section -->*/}
                 <section className="success" id="about">
-                    <About 
-                    info1="Abdul Ghani is a Professional Web Developer, Blogger, Graphic Designer, Tech Geek. He started creating sites and blogs at the age of 14. He is also an SEO Expert. He's currently pursuing a Bachelor's Degree in Computer Science." 
-                    info2="His work has never disappointed his clients. He loves to be innovative, Well! If you want to get your business online or want to create a website for your organization or any kind of thing, feel free to contact him." />
+                    <About
+                        info1="Abdul Ghani is a Professional Web Developer, Blogger, Graphic Designer, Tech Geek. He started creating sites and blogs at the age of 14. He is also an SEO Expert. He's currently pursuing a Bachelor's Degree in Computer Science."
+                        info2="His work has never disappointed his clients. He loves to be innovative, Well! If you want to get your business online or want to create a website for your organization or any kind of thing, feel free to contact him." />
                 </section>
 
                 {/* <!-- Contact Section -->*/}
@@ -312,12 +312,7 @@ class App extends Component {
                                 <div className="footer-col col-md-4">
                                     <h3>Around the Web</h3>
                                     <ul className="list-inline">
-                                        <li>
-                                            <a href="https://www.facebook.com/developerghani/" className="btn-social btn-outline"><i className="fa fa-fw fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="https://plus.google.com/+abdulghanidev/" className="btn-social btn-outline"><i className="fa fa-fw fa-google-plus"></i></a>
-                                        </li>
+
                                         <li>
                                             <a href="https://www.twitter.com/developerghani" className="btn-social btn-outline"><i className="fa fa-fw fa-twitter"></i></a>
                                         </li>
@@ -340,7 +335,7 @@ class App extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-12">
-                                    Copyright &copy; 2013 - {new Date().getFullYear()} | <a href="http://abdulghani.me">Abdul Ghani</a>
+                                    Copyright &copy; 2013 - {new Date().getFullYear()} | <a href="https://abdulghani.me">Abdul Ghani</a>
                                 </div>
                             </div>
                         </div>
@@ -349,7 +344,7 @@ class App extends Component {
 
                 <div className="scroll-top page-scroll" onClick={this.scrollToTop}>
                     <a className="btn btn-primary" href="#">
-                       <i className="fa fa-chevron-up"></i>
+                        <i className="fa fa-chevron-up"></i>
                     </a>
                 </div>
 
